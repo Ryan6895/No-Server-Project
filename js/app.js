@@ -1,1 +1,1 @@
-angular.module('spotifyApp', []);
+angular.module('App', []);

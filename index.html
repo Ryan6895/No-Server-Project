@@ -1,52 +1,102 @@
 <!DOCTYPE html>
-<html ng-app="spotifyApp">
+<html ng-app="App">
   <head>
     <meta charset="utf-8">
-    <title>Spotify Web Player</title>
+    <title>Movie Search</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="icon" href="img/icon.png">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
-  <body ng-controller="spotifyController">
-    <ul class="navBar">
-<li class='nav-img nav-top'>
-  <img class='img' src="img/Spotify.png" alt="">
-</li>
-<li class='nav-img'>
-  <div class="mySideNav">
-    <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
-    <button class="btn btn-primary" ng-click="getData(artist)"> Submit </button>
-  </div>
-  <img class="img" src="img/Search.svg" alt="">
-  <span>search</span>
-</li>
-<li class='nav-img'>
-  <img class='img' src="img/browse.png" alt="">
-  <span>Browse</span>
-</li>
-<li class='nav-img'>
-  <img class='img' src="img/radio.png" alt="">
-  <span>Radio</span>
-</li>
-<li class='nav-img'>
-  <img class='img' src="img/music.png" alt="">
-  <span class="smaller">Your Music</span>
-</li>
-<li class='nav-img'>
-  <img class='img' src="img/follow.svg" alt="">
-  <span>Follow</span>
-</li>
-    </ul>
-    <div class="main-container">
+  <body ng-controller="Controller">
+    <div class="top-Bar"></div>
+  <div class="main-Container">
 
-  <div class="container" ng-model='musicInfo' ng-repeat="music in musicInfo">
-    <p>{{music.Title}} {{music.Artist}} {{music.Collection}} {{music.Genre}}</p>
-    <hr>
+<ul class="navBar">
+  <li class="navOption nav-logo"><img src="img/primary-green.svg" alt=""></li>
+  <li class="navOption" ><a href="#home">Home</a></li>
+  <li class="navOption" ><a href="#collection">Collection</a></li>
+  <li class="navOption" ><a href="#upcoming">Upcoming</a></li>
+  <li class="navOption" ><a href="#playing">Now Playing</a></li>
+</ul>
+<div class="searchbar">
+  <img class="search" src="img/search.svg" alt="">
+<input class="inputSearch"type="text" placeholder=" Search for a movie, tv show...">
+<span class="erase">X</span>
+</div>
+<div class="contentTitle">
+<span>In Theaters</span>
+<span>Super Hero Shows</span>
+</div>
+<div class="contentContainer">
+  <div class="inTheaters">
+<div class="mini-inTheaters1" ng-model='inTheaters1'>
+  <img class="photo" ng-src={{img1}} alt="">
+</div>
+<div class="mini-inTheaters2" ng-model='inTheaters2'>
+  <img class="photo" ng-src={{img2}} alt="">
+</div>
+<div class="mini-inTheaters3" ng-model='inTheaters3'>
+  <img class="photo" ng-src={{img3}} alt="">
+</div>
+<div class="mini-inTheaters4" ng-model='inTheaters4'>
+  <img class="photo" ng-src={{img4}} alt="">
+</div>
   </div>
+  <div class="superHeros">
+    <div class="mini-inTheaters1">
+      <img class="photo" ng-src={{img5}} alt="">
+    </div>
+    <div class="mini-inTheaters2">
+      <img class="photo" ng-src={{img6}} alt="">
+    </div>
+    <div class="mini-inTheaters3">
+      <img class="photo" ng-src={{img7}} alt="">
+    </div>
+    <div class="mini-inTheaters4">
+      <img class="photo" ng-src={{img8}} alt="">
+    </div>
   </div>
-
-<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
+</div>
+</div>
+<div class="bottom-Bar">
+  <div class="footer">
+    <div class="footer-left">
+  &#169; Ryan Clark
+    </div>
+    <div class="footer-right">
+      <div class="photo-holder">
+        <a href="https://www.facebook.com/ryan.clark.94009" target="_blank">
+          <img class="photo facebook" src="img/facebook-color.png" alt="">
+        </a>
+      </div>
+      <div class="photo-holder">
+        <a href="https://twitter.com/RyanClark95" target="_blank">
+          <img class="photo twitter" src="img/twitter-color.png" alt="">
+        </a>
+      </div>
+      <div class="photo-holder">
+        <a href="https://www.instagram.com/ryan681995/?hl=en" target="_blank">
+          <img class="photo instagram" src="img/instagramicon.png" alt="">
+        </a>
+      </div>
+      <div class="photo-holder">
+        <a href="https://github.com/Ryan6895" target="_blank">
+          <img class="photo git-hub" src="img/git-hub.png" alt="">
+        </a>
+      </div>
+      <div class="photo-holder">
+        <a href="https://www.linkedin.com/in/ryan-clark-402a69113/" target="_blank">
+          <img class="photo linkedin" src="img/linkedin.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"src ="js/jquery-2.0.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/mainCtrl.js"></script>
-<script src="js/spotifyService.js"></script>
+<script src="js/service.js"></script>
+<script src="js/animations.js"></script>
   </body>
 </html>
