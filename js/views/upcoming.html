@@ -1,0 +1,5 @@
+<h1>Upcoming Movies</h1>
+<ul ng-repeat="item in movies">
+<li><a ui-sref='item({id: title.id})'>{{item.title}}</a></li>
+<li>{{item.overview}}</li>
+</ul>

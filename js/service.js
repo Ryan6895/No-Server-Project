@@ -1,13 +1,25 @@
 angular.module('App')
 .service('service', function($http , $q){
 var apiKey = '9781b99a2fd6b6f93bcb711cb9ae3e68&'
+this.search = function(title) {
+  var deferred = $q.defer();
+  $http({
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/find/' + title + '?api_key=' + apiKey + 'language=en-US&external_source=imdb_id'
+  }).then(function(response) {
+    var Arrow = response.data
+  deferred.resolve(Arrow)
+  })
+  return deferred.promise
+}
 this.getUpcoming = function() {
   var deferred = $q.defer();
   $http({
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + apiKey + 'language=en-US&page=1'
+    url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + apiKey + 'language=en-US&page=1'
   }).then(function(response) {
 var upComing = response.data.results
+console.log(response);
   deferred.resolve(upComing)
   })
   return deferred.promise
@@ -56,4 +68,23 @@ this.getAgents = function() {
   })
   return deferred.promise
 }
+this.getNowPlaying = function() {
+  var deferred = $q.defer();
+  $http({
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=' + apiKey + 'language=en-US&page=1'
+  }).then(function(response) {
+var nowPlaying = response.data.results
+  deferred.resolve(nowPlaying)
+  })
+  return deferred.promise
+}
+
+this.getOneTitle = function(id) {
+    return $http.get('https://api.themoviedb.org/3/movie/'+ id +'?api_key=' + apiKey + '&language=en-US')
+    .then(function(info) {
+      return info.data.results;
+    })
+  }
+
 });
