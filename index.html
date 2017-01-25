@@ -20,10 +20,12 @@
 </ul>
 <div class="searchbar">
   <img class="search" src="img/search.svg" alt="">
-<input class="inputSearch"type="text" placeholder=" Search for a movie, tv show...">
+<form ng-submit="search(param)" action="index.html" method="post">
+  <input class="inputSearch"ng-model='param' placeholder=" Search for a movie, tv show...">
+</form>
 <span class="erase">X</span>
 </div>
-<ui-view></ui-view>
+<ui-view class="stateContainer"></ui-view>
 </div>
 <div class="bottom-Bar">
   <div class="footer">
@@ -69,6 +71,7 @@
 <script src="js/controllers/nowPlayingCtrl.js"></script>
 <script src="js/controllers/upcomingCtrl.js"></script>
 <script src="js/controllers/item.js"></script>
+<script src="js/controllers/search.js"></script>
 <script src="js/service.js"></script>
 <script src="js/animations.js"></script>
   </body>

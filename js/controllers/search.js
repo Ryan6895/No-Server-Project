@@ -1,6 +1,6 @@
 angular.module('App')
-.controller('searchCtrl', function($scope, service) {
-  service.getNowPlaying().then(function(movies) {
-      $scope.nowmovies = movies;
+.controller('searchCtrl', function($scope, service, $state) {
+  service.searchItem($state.params.param).then(function(keyword) {
+      $scope.item = keyword;
 })
 })

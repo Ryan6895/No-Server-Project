@@ -1,19 +1,30 @@
-<div class="top-info">
-  <div class="item_poster">
+<div class="container" ng-style="backdrop"></div>
+<div class="cover"></div>
 
+    <div class="top-info">
+    <div class="item_poster">
+      <img class="photo" src="{{moviePoster}}" alt="">
+    </div>
+    <div class="item_top">
+      <span class="item_title">{{movie.title}}</span>
+      <span class="item_year">  {{item_year}}</span>
+      <span class="item_score"> &#9733;{{movie.vote_average}}</span>
+    </div>
+    <div class="item_add">
+      <div class="">&#9776;</div>
+    </div>
+    <div class="item_overView">
+      <p class="item_overTitle">Overview </p>
+      <p>{{movie.overview}}</p>
+    </div>
+    <div>
+      <ul class="item_data">
+        <li><span class="item_info">Status: {{movie.status}}</span></li>
+        <li><span class="item_info"> Runtime: {{item_runtime}}</span></li>
+        <li><span class="item_info">Budget: {{movie.budget | currency}}</span></li>
+        <li><span class="item_info">Revenue: {{movie.revenue | currency}}</span></li>
+        <li><span class="item_info">Release Date: {{movie.release_date}}</span></li>
+        <li><span class="item_info"><a href="{{movie.homepage}}"  target="_blank">Homepage</a></span></li>
+      </ul>
+    </div>
   </div>
-  <div class="item_title">
-    {{movie.title}}{{item.year}}{{rating}}
-  </div>
-  <div class="item_add">
-    <!--Buttons to add to list's  -->
-  </div>
-  <div class="item_overView">
-    <p>Overview </p>
-    <p>{{overview}}</p>
-  </div>
-  <div class="item_data">
-    {{status}}{{runtime}}{{budget}}{{revenue}}
-  </div>
-</div>
-<!--add backdrop photo  -->

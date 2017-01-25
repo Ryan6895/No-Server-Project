@@ -1,6 +1,8 @@
 angular.module('App', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider) {
 
+  $urlRouterProvider.otherwise('/');
+
   $stateProvider
   .state('home', {
     url: '/',
@@ -27,4 +29,9 @@ angular.module('App', ['ui.router'])
       controller: 'itemCtrl',
       templateUrl: 'js/views/item.html'
     })
+    .state('search', {
+        url: '/search/:param',
+        controller: 'search',
+        templateUrl: 'js/views/search.html'
+      })
 });

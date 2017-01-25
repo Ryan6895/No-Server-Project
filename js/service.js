@@ -1,14 +1,14 @@
 angular.module('App')
 .service('service', function($http , $q){
 var apiKey = '9781b99a2fd6b6f93bcb711cb9ae3e68&'
-this.search = function(title) {
+this.searchItem = function(title) {
   var deferred = $q.defer();
   $http({
     method: 'GET',
     url: 'https://api.themoviedb.org/3/find/' + title + '?api_key=' + apiKey + 'language=en-US&external_source=imdb_id'
   }).then(function(response) {
-    var Arrow = response.data
-  deferred.resolve(Arrow)
+    var response = response.data
+  deferred.resolve(response)
   })
   return deferred.promise
 }
@@ -19,7 +19,6 @@ this.getUpcoming = function() {
     url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=' + apiKey + 'language=en-US&page=1'
   }).then(function(response) {
 var upComing = response.data.results
-console.log(response);
   deferred.resolve(upComing)
   })
   return deferred.promise
@@ -83,7 +82,7 @@ var nowPlaying = response.data.results
 this.getOneTitle = function(id) {
     return $http.get('https://api.themoviedb.org/3/movie/'+ id +'?api_key=' + apiKey + '&language=en-US')
     .then(function(info) {
-      return info.data.results;
+      return info.data;
     })
   }
 

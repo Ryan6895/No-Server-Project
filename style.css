@@ -139,6 +139,79 @@ position: relative;
   bottom: 0px;
   right: 0px;
 }
+/*styling for item.html*/
+.container {
+  filter: brightness(120%) grayscale(12%) opacity(65%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: calc(100vh - 81px);
+  display: block;
+}
+  .cover {
+  background-color: black;
+  filter: opacity(80%);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: calc(100vh - 81px);
+  display: block;
+}
+.top-info {
+  margin-top: 50px;
+  color: white;
+}
+.item_poster {
+  width: 250px;
+  height: 500px;
+  float: left;
+  margin-right: 40px;
+}
+.item_title {
+  font-size: 25px;
+  font-weight:bold;
+}
+.item_year {
+  color: gray;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.item_score {
+  background-color: green;
+  border-radius: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_overTitle {
+  font-size: 22px;
+  font-weight: bold;
+}
+.item_data li {
+  list-style-type: none;
+  margin: 15px;
+  color: #01d277;
+}
+.item_info {
+  background-color: rgba(255, 255, 255, 0.35);
+  border: solid 1px #01d277;
+  border-radius: 8px;
+  margin: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_info a:link {
+  color:#01d277;
+}
+.item_info a:visited {
+  color:#01d277;
+}
 @media only screen and (max-width: 1000px) {
 
   .navBar {

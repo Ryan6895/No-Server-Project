@@ -6,9 +6,13 @@ angular.module('App')
     $scope.upcoming = response;
     $scope.movieImg = "https://image.tmdb.org/t/p/original";
     $scope.img1 = $scope.movieImg + $scope.upcoming[1].poster_path;
+    $scope.id1 = $scope.upcoming[1].id
     $scope.img2 = $scope.movieImg + $scope.upcoming[0].poster_path;
+    $scope.id2 = $scope.upcoming[0].id
     $scope.img3 = $scope.movieImg + $scope.upcoming[3].poster_path;
+    $scope.id3 = $scope.upcoming[3].id
     $scope.img4 = $scope.movieImg + $scope.upcoming[8].poster_path;
+    $scope.id4 = $scope.upcoming[8].id
 })
   service.getArrow().then(function(arrow) {
       $scope.tvArrow = arrow;
