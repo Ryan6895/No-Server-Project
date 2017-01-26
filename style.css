@@ -87,21 +87,29 @@ body {
   width: 100%
 }
 .bottom-Bar {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   width: 100%;
   height: 82px;
   background-color: #0A2342;
+  clear: both;
 }
 .contentTitle {
   width: 1000px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
+  margin: auto;
+}
+.notSuperTitle {
+  display: none;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .contentContainer {
 width: 1000px;
-height: 600px;
+height: 620px;
 margin-left: auto;
 margin-right: auto;
 margin-bottom: 125px;
@@ -172,6 +180,10 @@ position: relative;
 .top-info {
   margin-top: 50px;
   color: white;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 721px;
 }
 .item_poster {
   width: 250px;
@@ -190,6 +202,31 @@ position: relative;
 }
 .item_score {
   background-color: green;
+  border-radius: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_score_best {
+  background-color: green;
+  border-radius: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_score_better {
+  background-color: yellow;
+  color: black;
+  border-radius: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_score_okay {
+  background-color: orange;
+  border-radius: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.item_score_bad {
+  background-color: red;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
@@ -243,11 +280,12 @@ position: relative;
 }
 .collection_left {
   float: left;
+  height: 734px;
   border: blue solid 1px;
 }
 .item_profilepic {
-  height: 150px;
-  width: 150px;
+  height: 170px;
+  width: 170px;
 }
 .collection_listTitle {
   list-style-type: none;
@@ -256,13 +294,73 @@ position: relative;
   list-style-type: none;
 }
 .collection_right {
-  width: 846px;
+  width: 826px;
   border: 1px solid red;
   float: right;
+}
+.collection_title {
+  margin: 20px;
+  font-size: 30px;
+}
+.collection_delete {
+  float: right;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.collection_movie {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.collection_date {
+  color: gray;
+  margin-left: 10px;
+}
+.profile_name {
+  font-size: 25px;
+}
+/*styling for search.html*/
+.search_poster {
+  width: 120px;
+  height: 180px;
+  float: left;
+  margin-right: 20px;
+}
+.search_item {
+  margin: 40px;
+  border: solid grey .25px;
+  height: 180px;
+  box-shadow: 2px 2px 12px grey;
+  list-style-type: none;
+  overflow: hidden;
+}
+.search_item a:link {
+  color: black;
+  text-decoration: none;
+}
+.search_item a:visited {
+  color: black;
+  text-decoration: none;
+}
+.search_title {
+  font-size: 25px;
+  font-weight: bold;
+}
+.search_rating {
+  float: right;
+  margin: 10px;
+}
+.search_date {
+  color: gray;
+  float: right;
+  margin: 10px;
 }
 @media only screen and (max-width: 1000px) {
   .list_item {
     height: 230px;
+  }
+  .inputSearch {
+    width: 600px;
+    margin: auto;
   }
   .navBar {
     flex-direction: column;
@@ -298,7 +396,49 @@ position: relative;
     width: 400px;
     margin: auto;
   }
+  .superTitle {
+    display: none;
+  }
+  .notSuperTitle {
+    display: block;
+  }
   .bottom-Bar {
     position: relative;
+  }
+  .collection_left {
+    float: left;
+    height:450px;
+    border: blue solid 1px;
+  }
+  .item_profilepic {
+    height: 370px;
+    width: 370px;
+    float: left;
+    margin-right: 20px;
+  }
+  .collection_right {
+    width: 800px;
+    min-height: 950px;
+    border: 1px solid red;
+    clear: both;
+  }
+  .collection_left {
+    height: 370px;
+    width: 800px;
+  }
+  .top-collection {
+    width: 800px;
+  }
+  .collection_listTitle {
+    font-size: 45px;
+  }
+  .top-info {
+    width: 800px;
+    min-height: 1340px;
+    font-size: 36px;
+  }
+  .item_poster {
+    width: 350px;
+    height: 550px;
   }
 }

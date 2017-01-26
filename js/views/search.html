@@ -1,7 +1,11 @@
 <ul ng-repeat="item in items">
-  <li class="list_item">
-    <img class="photo list_poster" ng-src="{{movieImg + item.poster_path}}" alt="">
-    <a ui-sref='item({id: item.id})'>{{item.title}}</a>
+  <li class="search_item">
+    <img class="photo search_poster" ng-src="{{movieImg + item.poster_path}}" alt="">
+    <a ui-sref='item({id: item.id})'>
+      <span class='search_title'>{{item.title}}</span>
+      <span class='search_date'>Release Date: {{item.release_date}}</span>
+      <span class="search_rating">{{item.vote_average}}</span>
+    </a>
     <p>{{item.overview}}</p>
   </li>
 

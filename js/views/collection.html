@@ -2,24 +2,29 @@
   <div class="collection_left">
     <div class="item_profilepic">
       <img class="photo" src="img/profile.jpg" alt="">
+
     </div>
-    <center><span>Ryan Clark</span></center>
+    <center><span class='profile_name'>Ryan Clark</span></center>
     <br>
     <br>
-    <center><span>Collections</span></center>
+    <center><span class='profile_title'>Collections</span></center>
       <ul class="collection_listTitle">
-        <li ng-click='ownList()'>- Own</li>
-        <li ng-click='wantList()'>- Want</li>
-        <li ng-click='upcomingList()'>- Upcoming</li>
+        <li class='erase' ng-click='ownList()'>- Own</li>
+        <li class='erase' ng-click='wantList()'>- Want</li>
+        <li class='erase' ng-click='upcomingList()'>- Upcoming</li>
       </ul>
   </div>
   <div class="collection_right">
     <div class="collection_title">{{listTitle}}</div>
       <ul class="collection_list" ng-repeat='movie in movies[thisList] track by $index'>
-        <li class="">
-        <img class="photo list_poster" ng-src="{{movieImg + movie.poster_path}}" alt="">
-        <a ui-sref='item({id: movie.id})'>{{movie.title}}</a>
-        <p>{{movie.overview}}</p><span ng-click="removeItem(thisList, movie.id)">x</span></li>
+        <li class="search_item">
+        <img class="photo search_poster" ng-src="{{movieImg + movie.poster_path}}" alt="">
+        <a ui-sref='item({id: movie.id})'>
+          <span class='collection_movie'>{{movie.title}}</span>
+          <span class="collection_date">{{movie.release_date}}</span>
+          <span class='collection_delete' ng-click="removeItem(thisList, movie.id)">x</span>
+        </a>
+        <p>{{movie.overview}}</p></li>
       </ul>
     </div>
 </div>

@@ -16,27 +16,23 @@ angular.module('App')
 })
   service.getArrow().then(function(arrow) {
       $scope.tvArrow = arrow;
-      // console.log($scope.upcoming);
       $scope.img5 = $scope.tvImg + $scope.tvArrow.poster_path;
-
+      $scope.id5 = $scope.tvArrow.id
   })
   service.getFlash().then(function(flash) {
       $scope.tvFlash = flash;
-      // console.log($scope.upcoming);
       $scope.img6 = $scope.tvImg + $scope.tvFlash.poster_path;
-
+      $scope.id6 = $scope.tvFlash.id
   })
   service.getSuperGirl().then(function(superGirl) {
       $scope.tvSuperGirl = superGirl;
-      // console.log($scope.upcoming);
       $scope.img7 = $scope.tvImg + $scope.tvSuperGirl.poster_path;
-
+      $scope.id7 = $scope.tvSuperGirl.id
   })
   service.getAgents().then(function(agents) {
       $scope.tvAgents = agents;
-      // console.log($scope.upcoming);
       $scope.img8 = $scope.tvImg + $scope.tvAgents.poster_path;
-
+      $scope.id8 = $scope.tvAgents.id
   })
 
 
