@@ -1,0 +1,25 @@
+<div class="top-collection">
+  <div class="collection_left">
+    <div class="item_profilepic">
+      <img class="photo" src="img/profile.jpg" alt="">
+    </div>
+    <center><span>Ryan Clark</span></center>
+    <br>
+    <br>
+    <center><span>Collections</span></center>
+      <ul class="collection_listTitle">
+        <li ng-click='ownList()'>- Own</li>
+        <li ng-click='wantList()'>- Want</li>
+        <li ng-click='upcomingList()'>- Upcoming</li>
+      </ul>
+  </div>
+  <div class="collection_right">
+    <div class="collection_title">{{listTitle}}</div>
+      <ul class="collection_list" ng-repeat='movie in movies[thisList] track by $index'>
+        <li class="">
+        <img class="photo list_poster" ng-src="{{movieImg + movie.poster_path}}" alt="">
+        <a ui-sref='item({id: movie.id})'>{{movie.title}}</a>
+        <p>{{movie.overview}}</p><span ng-click="removeItem(thisList, movie.id)">x</span></li>
+      </ul>
+    </div>
+</div>

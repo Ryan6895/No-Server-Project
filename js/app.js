@@ -30,8 +30,8 @@ angular.module('App', ['ui.router'])
       templateUrl: 'js/views/item.html'
     })
     .state('search', {
-        url: '/search/:param',
-        controller: 'search',
-        templateUrl: 'js/views/search.html'
+      url: '/search/:param',
+      controller: 'searchCtrl',
+      templateUrl: 'js/views/search.html'
       })
 });

@@ -5,7 +5,7 @@ this.searchItem = function(title) {
   var deferred = $q.defer();
   $http({
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/find/' + title + '?api_key=' + apiKey + 'language=en-US&external_source=imdb_id'
+    url: 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + 'language=en-US&query=' + title + '&page=1&include_adult=false'
   }).then(function(response) {
     var response = response.data
   deferred.resolve(response)

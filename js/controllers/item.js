@@ -1,5 +1,5 @@
 angular.module('App')
-.controller('itemCtrl', function($scope, service , $stateParams) {
+.controller('itemCtrl', function($scope, service , $stateParams, listService) {
 service.getOneTitle($stateParams.id).then(function(movie) {
   $scope.movie = movie;
     console.log(movie);
@@ -26,4 +26,7 @@ return $scope.item_runtime
 }
 $scope.findTime($scope.movie.runtime)
 })
+$scope.addMovie = function(list, movie){
+  listService.addItemToList(list, movie)
+}
 })

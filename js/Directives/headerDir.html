@@ -1,0 +1,18 @@
+<div class="top-Bar"></div>
+<div class="main-Container">
+
+<ul class="navBar">
+<li class="navOption nav-logo"><img src="img/primary-green.svg" alt=""></li>
+<li class="navOption" ><a ui-sref = "home">Home</a></li>
+<li class="navOption" ><a ui-sref = "collection">Collection</a></li>
+<li class="navOption" ><a ui-sref = "upcoming">Upcoming</a></li>
+<li class="navOption" ><a ui-sref = "nowPlaying">Now Playing</a></li>
+</ul>
+<div class="searchbar">
+<img class="search" src="img/search.svg" alt="">
+<form ng-submit="search(param)">
+<input class="inputSearch"ng-model='param' placeholder=" Search for a movie, tv show...">
+</form>
+<span ng-click="erase()" class="erase">X</span>
+</div>
+</div>
