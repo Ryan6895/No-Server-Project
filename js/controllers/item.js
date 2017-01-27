@@ -28,6 +28,7 @@ return $scope.item_runtime
 $scope.findTime($scope.movie.runtime)
 })
 $scope.addMovie = function(list, movie){
+  $scope.hovering = false;
   listService.addItemToList(list, movie)
 }
 

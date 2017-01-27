@@ -1,8 +1,20 @@
-<h1>Upcoming Movies</h1>
+<h1 class="state_title">Upcoming Movies</h1>
 <ul class="list_list" ng-repeat="item in movies">
-<li class="list_item">
-  <img class="photo list_poster" ng-src="{{movieImg + item.poster_path}}" alt="">
-  <a ui-sref='item({id: item.id})'>{{item.title}}</a>
+<li class="search_item">
+  <img class="photo search_poster" ng-src="{{movieImg + item.poster_path}}" alt="">
+  <div class="item_add">
+    <div class="cursor openList" ng-click="hovering = true">&#9776;</div>
+    <div class="search_addToList" ng-show="hovering" ng-mouseleave="hovering = false">
+      <div class='item_options cursor' ng-click="addMovie('owned', movie); ">Owned</div>
+      <div class='item_options cursor' ng-click="addMovie('want', movie)">Want</div>
+      <div class='item_options cursor' ng-click="addMovie('upcoming', movie)">Upcoming</div>
+    </div>
+  </div>
+  <a ui-sref='item({id: item.id})'>
+    <span class='search_title'>{{item.title}}</span>
+    <span class='search_date'>Release Date: {{item.release_date}}</span>
+    <span class={{score}}>{{findRatingColor(item.vote_average)}}</span>
+  </a>
   <p>{{item.overview}}</p>
 </li>
 

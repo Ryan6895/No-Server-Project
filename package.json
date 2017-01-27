@@ -1,0 +1,19 @@
+{
+  "name": "noserverproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "localStorage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryan6895/No-Server-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryan6895/No-Server-Project/issues"
+  },
+  "homepage": "https://github.com/Ryan6895/No-Server-Project#readme"
+}

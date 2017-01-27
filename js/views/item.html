@@ -3,7 +3,7 @@
 
     <div class="top-info">
     <div class="item_poster">
-      <img class="photo" src="{{moviePoster}}" alt="">
+      <img class="photo" ng-src="{{moviePoster}}" alt="">
     </div>
     <div class="item_top">
       <span class="item_title">{{movie.title}}</span>
@@ -11,7 +11,12 @@
       <span class={{score}}> &#9733;{{movie.vote_average}}</span>
     </div>
     <div class="item_add">
-      <div ng-click="addMovie('owned', movie)" class="erase">&#9776;</div>
+      <div class="cursor openList" ng-click="hovering = true">&#9776;</div>
+      <div class="item_addToList" ng-show="hovering" ng-mouseleave="hovering = false">
+        <div class='item_options cursor' ng-click="addMovie('owned', movie); ">Owned</div>
+        <div class='item_options cursor' ng-click="addMovie('want', movie)">Want</div>
+        <div class='item_options cursor' ng-click="addMovie('upcoming', movie)">Upcoming</div>
+      </div>
     </div>
     <div class="item_overView">
       <p class="item_overTitle">Overview </p>

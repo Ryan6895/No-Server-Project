@@ -85,5 +85,15 @@ this.getOneTitle = function(id) {
       return info.data;
     })
   }
-
+  this.getSlickstuff = function() {
+    var deferred = $q.defer();
+    $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + apiKey + '&language=en-US&page=1'
+    }).then(function(topRated) {
+      var response = response.data
+    deferred.resolve(topRated)
+    })
+    return deferred.promise
+  }
 });

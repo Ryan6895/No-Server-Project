@@ -25,6 +25,9 @@ body {
 .erase {
   cursor: pointer;
 }
+.cursor {
+  cursor: pointer;
+}
 .navOption a{
     display: block;
     color: white;
@@ -32,12 +35,12 @@ body {
     padding: 14px 20px;
     text-decoration: none;
 }
-
 .navOption a:hover {
     background-color: #111;
     color: #fff;
     text-decoration: none;
 }
+
 .nav-logo {
   width: 45px;
   height: 40px;
@@ -205,35 +208,70 @@ position: relative;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
+  font-weight: bold;
+  color: white;
 }
 .item_score_best {
   background-color: green;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
+  font-weight: bold;
+  color: white;
 }
 .item_score_better {
   background-color: yellow;
-  color: black;
+  color: navy;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
+  font-weight: bold;
 }
 .item_score_okay {
   background-color: orange;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
+  font-weight: bold;
+  color: white;
 }
 .item_score_bad {
   background-color: red;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
+  font-weight: bold;
+  color: white;
 }
 .item_overTitle {
   font-size: 22px;
   font-weight: bold;
+}
+.item_add {
+  font-size: 20px;
+  margin: 10px;
+  position: relative;
+}
+.item_addToList {
+position: absolute;
+top: 0px;
+left: 270px;
+width: 110px;
+height: 110px;
+border-radius: 5px;
+color: black;
+border: #01d277 2px solid;
+background-color: rgba(255, 255, 255, 0.85);
+}
+.item_options {
+  font-size: 18px;
+  margin: 8px;
+  padding: 2px;
+  border-radius: 4px;
+}
+.item_options:active {
+  background-color: #01d277;
+  color: white;
 }
 .item_data li {
   list-style-type: none;
@@ -270,9 +308,13 @@ position: relative;
   list-style-type: none;
   clear: both;
 }
+.list_list {
+max-width: 1000px;
+margin: auto;
+}
+
 /*collection page styling*/
 .top-collection {
-  border: red solid 1px;
   margin-left: auto;
   margin-right: auto;
   width: 1000px;
@@ -281,7 +323,6 @@ position: relative;
 .collection_left {
   float: left;
   height: 734px;
-  border: blue solid 1px;
 }
 .item_profilepic {
   height: 170px;
@@ -295,7 +336,6 @@ position: relative;
 }
 .collection_right {
   width: 826px;
-  border: 1px solid red;
   float: right;
 }
 .collection_title {
@@ -317,18 +357,43 @@ position: relative;
 }
 .profile_name {
   font-size: 25px;
+  font-weight: bold;
 }
+.profile_title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.mycollection {
+  width: 103px;
+  padding: 4px;
+  border-radius: 30px;
+  margin-top: 11px;
+  background-color: #11478a;
+  color: white;
+  font-weight: 400;
+  padding-left: 16px;
+  box-shadow: 2px 9px #999;
+}
+.mycollection:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.mycollectionActive {
+  background-color: #01d277;
+}
+
 /*styling for search.html*/
 .search_poster {
-  width: 120px;
-  height: 180px;
+  width: 146px;
+  height: 220px;
   float: left;
   margin-right: 20px;
 }
 .search_item {
   margin: 40px;
   border: solid grey .25px;
-  height: 180px;
+  height: 220px;
   box-shadow: 2px 2px 12px grey;
   list-style-type: none;
   overflow: hidden;
@@ -353,6 +418,20 @@ position: relative;
   color: gray;
   float: right;
   margin: 10px;
+}
+.search_addToList {
+position: absolute;
+top: 0px;
+left: 150px;
+width: 110px;
+height: 100px;
+border-radius: 5px;
+color: black;
+border: #01d277 2px solid;
+background-color: rgba(255, 255, 255, 0.85);
+}
+.state_title {
+  margin: 40px;
 }
 @media only screen and (max-width: 1000px) {
   .list_item {

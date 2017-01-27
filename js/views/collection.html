@@ -9,9 +9,9 @@
     <br>
     <center><span class='profile_title'>Collections</span></center>
       <ul class="collection_listTitle">
-        <li class='erase' ng-click='ownList()'>- Own</li>
-        <li class='erase' ng-click='wantList()'>- Want</li>
-        <li class='erase' ng-click='upcomingList()'>- Upcoming</li>
+        <li class='cursor mycollection {{active1}}' ng-click='ownList()'>Own</li>
+        <li class='cursor mycollection {{active2}}' ng-click='wantList()'>Want</li>
+        <li class='cursor mycollection {{active3}}' ng-click='upcomingList()'>Upcoming</li>
       </ul>
   </div>
   <div class="collection_right">
