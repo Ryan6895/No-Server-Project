@@ -22,6 +22,9 @@ body {
     height: 50px;
     color: #fff;
 }
+.spacing {
+    height: calc(100vh - 131px);
+}
 .erase {
   cursor: pointer;
 }
@@ -209,11 +212,11 @@ position: relative;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  min-height: 721px;
+  /*min-height: 721px;*/
 }
 .item_poster {
   width: 250px;
-  height: 510px;
+  height: 450px;
   float: left;
   margin-right: 40px;
 }
@@ -337,6 +340,7 @@ margin: auto;
 }
 .item_overview {
   margin: 4px;
+
 }
 /*collection page styling*/
 .top-collection {
@@ -567,11 +571,17 @@ background-color: rgba(255, 255, 255, 0.85);
   }
   .top-info {
     width: 800px;
-    min-height: 1340px;
+    /*min-height: 1340px;*/
     font-size: 36px;
   }
   .item_poster {
-    width: 350px;
-    height: 550px;
+    width: 250px;
+    height: 450px;
+  }
+  .item_overView {
+    font-size: 16px;
+  }
+  .item_data {
+  font-size: 16px;
   }
 }
