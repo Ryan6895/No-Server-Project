@@ -18,7 +18,17 @@
     <div class="collection_title">{{listTitle}}</div>
       <ul class="collection_list" ng-repeat='movie in movies[thisList] track by $index'>
         <li class="search_item">
-        <img class="photo search_poster" ng-src="{{movieImg + movie.poster_path}}" alt="">
+        <img class="changeList photo search_poster" ng-src="{{movieImg + movie.poster_path}}" alt="">
+
+        <div class="item_add">
+          <div class="cursor openList" ng-click="hovering = true">&#9868;</div>
+          <div id='{{smaller}}' class="collection_addToList" ng-show="hovering" ng-mouseleave="hovering = false">
+            <span>Move To:</span>
+            <div class='item_options {{moveItem1}} cursor' ng-click="moveMovie('owned', movie);removeItem(thisList, movie.id)">Owned</div>
+            <div class='item_options {{moveItem2}} cursor' ng-click="moveMovie('want', movie);removeItem(thisList, movie.id)">Want</div>
+          </div>
+
+        </div>
         <a ui-sref='item({id: movie.id})'>
           <span class='collection_movie'>{{movie.title}}</span>
           <span class="collection_date">{{movie.release_date}}</span>
