@@ -1,0 +1,35 @@
+<div class="container" ng-style="backdrop"></div>
+<div class="cover"></div>
+
+    <div class="top-info">
+    <div class="item_poster">
+      <img class="photo" ng-src="{{moviePoster}}" alt="">
+    </div>
+    <div class="item_top">
+      <span class="item_title">{{movie.name}}</span>
+      <span class="item_year">  {{item_year}}</span>
+      <span class={{score}}> &#9733;{{movie.vote_average}}</span>
+    </div>
+    <div class="item_add">
+      <div class="cursor openList" ng-click="hovering = true">&#9776;</div>
+      <div class="item_addToList" ng-show="hovering" ng-mouseleave="hovering = false">
+        <div class='item_options cursor' ng-click="addMovie('owned', movie); ">Owned</div>
+        <div class='item_options cursor' ng-click="addMovie('want', movie)">Want</div>
+        <div class='item_options cursor' ng-click="addMovie('upcoming', movie)">Upcoming</div>
+      </div>
+    </div>
+    <div class="item_overView">
+      <p class="item_overTitle">Overview </p>
+      <p>{{movie.overview}}</p>
+    </div>
+    <div>
+      <ul class="item_data">
+        <li><span class="item_info">Status: {{movie.status}}</span></li>
+        <li><span class="item_info"> Runtime: {{movie.episode_run_time[0]}} Minutes</span></li>
+        <li><span class="item_info">Number of Seasons: {{movie.number_of_seasons}}</span></li>
+        <li><span class="item_info">Number of Episodes: {{movie.number_of_episodes}}</span></li>
+        <li><span class="item_info">Last Aired: {{movie.last_air_date}}</span></li>
+        <li><span class="item_info"><a href="{{movie.homepage}}"  target="_blank">Homepage</a></span></li>
+      </ul>
+    </div>
+  </div>

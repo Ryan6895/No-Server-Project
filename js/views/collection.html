@@ -22,9 +22,9 @@
         <a ui-sref='item({id: movie.id})'>
           <span class='collection_movie'>{{movie.title}}</span>
           <span class="collection_date">{{movie.release_date}}</span>
-          <span class='collection_delete' ng-click="removeItem(thisList, movie.id)">x</span>
         </a>
-        <p>{{movie.overview}}</p></li>
+          <span class='collection_delete cursor' ng-click="removeItem(thisList, movie.id)">x</span>
+        <p class='item_overview'>{{movie.overview}}</p></li>
       </ul>
     </div>
 </div>

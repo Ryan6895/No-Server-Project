@@ -1,20 +1,22 @@
-<ul ng-repeat="item in items">
+<select class="filter"ng-model="sortProp" ng-options="item.Value as item.name for item in itemsArr">
+</select>
+<ul ng-repeat="item in items | orderBy: sortProp">
   <li class="search_item">
     <img class="photo search_poster" ng-src="{{movieImg + item.poster_path}}" alt="">
     <div class="item_add">
       <div class="cursor openList" ng-click="hovering = true">&#9776;</div>
       <div class="search_addToList" ng-show="hovering" ng-mouseleave="hovering = false">
-        <div class='item_options cursor' ng-click="addMovie('owned', movie); ">Owned</div>
-        <div class='item_options cursor' ng-click="addMovie('want', movie)">Want</div>
-        <div class='item_options cursor' ng-click="addMovie('upcoming', movie)">Upcoming</div>
+        <div class='item_options cursor' ng-click="addMovie('owned', item); ">Owned</div>
+        <div class='item_options cursor' ng-click="addMovie('want', item)">Want</div>
+        <div class='item_options cursor' ng-click="addMovie('upcoming', item)">Upcoming</div>
       </div>
     </div>
     <a ui-sref='item({id: item.id})'>
       <span class='search_title'>{{item.title}}</span>
       <span class='search_date'>Release Date: {{item.release_date}}</span>
-      <span class={{score}}>{{findRatingColor(item.vote_average)}}</span>
+      <span class='{{findRatingColor(item.vote_average)}}'>{{item.vote_average}}</span>
     </a>
-    <p>{{item.overview}}</p>
+    <p class='item_overview'>{{item.overview}}</p>
   </li>
 
 </ul>

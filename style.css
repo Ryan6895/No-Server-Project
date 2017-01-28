@@ -60,6 +60,29 @@ body {
   width: 20px;
   filter: invert(60%);
 }
+.filter {
+  background-color:#0A2342;
+  color:white;
+  padding:12px;
+  width:auto;
+  font-family:arial,tahoma;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-align:center;
+  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-radius:8px;
+  -webkit-border-radius:8px;
+  -webkit-appearance: none;
+  border:0;
+  outline:0;
+  -webkit-transition:0.3s ease all;
+	   -moz-transition:0.3s ease all;
+	    -ms-transition:0.3s ease all;
+	     -o-transition:0.3s ease all;
+	        transition:0.3s ease all;
+          margin-left: 80px;
+}
 .inputSearch {
   border-style: none;
   font-size: 25px;
@@ -190,7 +213,7 @@ position: relative;
 }
 .item_poster {
   width: 250px;
-  height: 500px;
+  height: 510px;
   float: left;
   margin-right: 40px;
 }
@@ -220,8 +243,8 @@ position: relative;
   color: white;
 }
 .item_score_better {
-  background-color: yellow;
-  color: navy;
+  background-color: #a9f23c;
+  color: #002f96;
   border-radius: 2px;
   padding-left: 6px;
   padding-right: 6px;
@@ -312,7 +335,9 @@ background-color: rgba(255, 255, 255, 0.85);
 max-width: 1000px;
 margin: auto;
 }
-
+.item_overview {
+  margin: 4px;
+}
 /*collection page styling*/
 .top-collection {
   margin-left: auto;
@@ -396,7 +421,12 @@ margin: auto;
   height: 220px;
   box-shadow: 2px 2px 12px grey;
   list-style-type: none;
-  overflow: hidden;
+  overflow: auto;
+  border-radius: 4px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 .search_item a:link {
   color: black;
@@ -443,13 +473,13 @@ background-color: rgba(255, 255, 255, 0.85);
   }
   .navBar {
     flex-direction: column;
-    height: 230px;
+    height: 55px;
   }
   .main-Container {
-    width: 600px;
+    width: 100%;
   }
   .top-Bar {
-    height: 230px;
+    height: 55px;
   }
 .navOption a:hover {
     background-color: #0A2342;
@@ -487,7 +517,6 @@ background-color: rgba(255, 255, 255, 0.85);
   .collection_left {
     float: left;
     height:450px;
-    border: blue solid 1px;
   }
   .item_profilepic {
     height: 370px;
@@ -498,8 +527,11 @@ background-color: rgba(255, 255, 255, 0.85);
   .collection_right {
     width: 800px;
     min-height: 950px;
-    border: 1px solid red;
     clear: both;
+  }
+  .mycollection {
+    font-size: 16px;
+    margin: 4px;
   }
   .collection_left {
     height: 370px;
@@ -510,6 +542,9 @@ background-color: rgba(255, 255, 255, 0.85);
   }
   .collection_listTitle {
     font-size: 45px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
   }
   .top-info {
     width: 800px;

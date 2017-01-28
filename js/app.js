@@ -29,6 +29,11 @@ angular.module('App', ['ui.router'])
       controller: 'itemCtrl',
       templateUrl: 'js/views/item.html'
     })
+    .state('tvItem', {
+        url: '/tvItem/:id',
+        controller: 'tvItem',
+        templateUrl: 'js/views/tvItems.html'
+      })
     .state('search', {
       url: '/search/:param',
       controller: 'searchCtrl',
